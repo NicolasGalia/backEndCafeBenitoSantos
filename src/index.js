@@ -9,4 +9,6 @@ app.listen( app.get('port'), ()=>{
     console.log('estoy en el puerto ' + app.get('port'))
 })
 
-console.log('hola mundo');
+//middlewears: son funciones que se ejecutan antes de llegar a las rutas 
+
+//rutas 
