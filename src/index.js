@@ -3,6 +3,10 @@ import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
 
+//llamar a la coneccion a la base de datos 
+import './database';
+
+
 
 //crear una instancia de express 
 const app = express();
