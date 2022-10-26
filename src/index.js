@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
+import productoRuter from './routes/productos.routes'
 
 //llamar a la coneccion a la base de datos 
 import './database';
@@ -28,7 +29,8 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')))
 
 //rutas 
-app.get('/', (req, res)=>{
-res.send('hola desde el backEnd en la peticion get')
+// app.get('/prueba', (req, res)=>{
+// res.send('hola desde el backEnd en la peticion get')
 
-})
+// })
+app.use('/apicafe', productoRuter)
