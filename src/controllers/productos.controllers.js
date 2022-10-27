@@ -1,7 +1,17 @@
 import Producto from "../models/productos";
 
-export const listarProductos = (req, res) => {
-  res.send("hola desde el backEnd en la peticion get");
+export const listarProductos = async (req, res) => {
+  try {
+    //buscar los productos 
+const Productos = await Producto.find();
+    //responder al frontEnd con el arreglo de productos 
+    res.status(200).json(Productos);
+
+  } catch (error) {
+    console.log(error);
+    //enviar una respuesta al frontEnd
+    res.status(404).json({mensaje: 'error al busca los productos'})
+  }
 };
 
 export const crearProducto = async (req, res) => {
