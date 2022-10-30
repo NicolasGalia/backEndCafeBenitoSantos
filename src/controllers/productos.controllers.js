@@ -70,3 +70,19 @@ res.status(200).json({
     })
 }
 }
+export const borrarProducto  = async (req, res) => {
+try {
+   //obtener el parametro (req.params.id)
+
+   //borrar el producto de mi base de datos 
+await Producto.findByIdAndDelete(req.params.id);
+res.status(200).json({
+    mensaje: 'el producto fue borrado exitosamente'
+})
+} catch (error) {
+    console.log(error);
+    res.status(404).json({ 
+        mensaje: 'error al intentar borrar un producto'
+    })
+}
+}
