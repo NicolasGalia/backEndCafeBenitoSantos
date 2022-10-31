@@ -65,6 +65,7 @@ return res.status(400).json({
 
 export const editarProducto  = async (req, res) => {
 try {
+  
     //obtener el parametro: (req.params.id)   
     //obtener los datos del body validados (req.body)
     //actualizar el producto en mi base de datos 
